@@ -56,8 +56,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="diceImageView1" destination="9aS-za-7CN" id="wkz-Vo-vDf"/>
-                        <outlet property="diceImageView2" destination="Agj-gm-fOd" id="9Zc-OE-LGz"/>
+                        <outlet property="UIDiceImage1" destination="9aS-za-7CN" id="wWk-gc-OD4"/>
+                        <outlet property="UIDiceImage2" destination="Agj-gm-fOd" id="boD-LS-kTZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
