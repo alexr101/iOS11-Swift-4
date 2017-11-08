@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import AudioToolbox
+import AVFoundation
 
 class ViewController: UIViewController{
+    var player:AVAudioPlayer?
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -18,8 +20,27 @@ class ViewController: UIViewController{
 
 
     @IBAction func notePressed(_ sender: UIButton) {
+        let notePath = "note" + String(sender.tag)
+        let ext = "wav"
+        print(notePath + ext)
         
+        playSound(name: notePath, withExt: ext)
+    }
+    
+    func playSound(name: String, withExt: String) {
+        let path = Bundle.main.path(forResource: name, ofType: withExt)!
+        let url = URL(fileURLWithPath: path)
         
+        do {
+            let sound = try AVAudioPlayer(contentsOf: url)
+            self.player = sound
+            sound.numberOfLoops = 0
+            sound.prepareToPlay()
+            sound.play()
+        } catch {
+            print("error loading file")
+            // couldn't load file :(
+        }
         
     }
     
