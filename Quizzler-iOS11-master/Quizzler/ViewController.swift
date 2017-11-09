@@ -36,13 +36,10 @@ class ViewController: UIViewController {
         
         if ( checkAnswer(answer: pickedAnswer) ) {
             nextQuestion()
+            ProgressHUD.showSuccess("Correct")
         } else {
-            print("wrong answer")
+            ProgressHUD.showError("Wrong Answer")
         }
-        
-        
-        
-
     }
     
     func correctAnswer() {

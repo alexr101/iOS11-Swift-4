@@ -6,6 +6,5 @@ target 'Quizzler' do
   use_frameworks!
 
   # Pods for Quizzler
-pod 'ProgressHUD'
 
 end
