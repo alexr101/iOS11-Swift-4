@@ -41,16 +41,24 @@ class ViewController: UIViewController {
         } else {
             print("wrong")
         }
+        
+        updateUI()
     }
     
     
     func updateUI() {
-        
+        questionLabel.text = allQuestions.list[questionNum].questionText
     }
     
 
     func nextQuestion() {
-        
+        print(questionNum-1)
+        print(allQuestions.list.count)
+        if(allQuestions.list.count-1 != questionNum ) {
+            questionNum += 1
+        } else {
+            questionNum = 0
+        }
     }
     
     
