@@ -9,14 +9,14 @@
 import Foundation
 
 class Story {
-    let text: String
-    let optionA: Option
+    var text: String
+    let optionA: Option?
     let optionB: Option
 
-    init(text: String, optionA: Option, optionB: Option) {
+    init(text: String, optionA: Option?, optionB: Option?) {
         self.text = text
-        self.optionA = optionA
-        self.optionB = optionB
+        self.optionA = optionA!
+        self.optionB = optionB!
 
     }
 }

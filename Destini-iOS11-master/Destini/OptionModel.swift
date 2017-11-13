@@ -9,11 +9,11 @@
 import Foundation
 
 class Option {
-    let text: String
-    let nextStory: String
+    var text: String
+    let nextStory: Story
     let lastStory: Bool
     
-    init(text: String, nextStory: String, lastStory: Bool) {
+    init(text: String, nextStory: Story, lastStory: Bool) {
         self.text = text
         self.nextStory = nextStory
         self.lastStory = lastStory
