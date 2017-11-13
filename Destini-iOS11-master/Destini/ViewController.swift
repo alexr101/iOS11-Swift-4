@@ -11,9 +11,11 @@ import UIKit
 class ViewController: UIViewController {
 
     // Our strings
-    let story1 = "Your car has blown a tire on a winding road in the middle of nowhere with no cell phone reception. You decide to hitchhike. A rusty pickup truck rumbles to a stop next to you. A man with a wide brimmed hat with soulless eyes opens the passenger door for you and asks: \"Need a ride, boy?\"."
-    let answer1a = "I\'ll hop in. Thanks for the help!"
-    let answer1b = "Better ask him if he\'s a murderer first."
+    let story1Txt = "Your car has blown a tire on a winding road in the middle of nowhere with no cell phone reception. You decide to hitchhike. A rusty pickup truck rumbles to a stop next to you. A man with a wide brimmed hat with soulless eyes opens the passenger door for you and asks: \"Need a ride, boy?\"."
+    let story1 = Story(text: story1Txt, optionA: option1a, optionB: option1b)
+    let option1a = Option(text: "I\'ll hop in. Thanks for the help!", nextStory: story2, lastStory: false)
+    let option1b = Option(text: "Better ask him if he\'s a murderer first.", nextStory: story2, lastStory: false)
+    
     
     
     let story2 = "He nods slowly, unphased by the question."
@@ -28,6 +30,9 @@ class ViewController: UIViewController {
     let story5 = "As you smash through the guardrail and careen towards the jagged rocks below you reflect on the dubious wisdom of stabbing someone while they are driving a car you are in."
     let story6 = "You bond with the murderer while crooning verses of \"Can you feel the love tonight\". He drops you off at the next town. Before you go he asks you if you know any good places to dump bodies. You reply: \"Try the pier.\""
     
+    var storyIndex = 1
+    
+    var story1 = Story(optionA: answer1a, optionB: answer1b, nextStory: <#T##String#>, lastStory: <#T##Bool#>)
     
     // UI Elements linked to the storyboard
     @IBOutlet weak var topButton: UIButton!         // Has TAG = 1
@@ -41,7 +46,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        storyTextView.text = story1
         
+        topButton.setTitle(answer1a, for: .normal)
+        bottomButton.setTitle(answer1b, for: .normal)
         
         // TODO Step 3: Set the text for the storyTextView, topButton, bottomButton, and to T1_Story, T1_Ans1, and T1_Ans2
         
