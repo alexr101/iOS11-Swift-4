@@ -11,12 +11,12 @@ import Foundation
 class Story {
     var text: String
     let optionA: Option?
-    let optionB: Option
+    let optionB: Option?
 
-    init(text: String, optionA: Option?, optionB: Option?) {
+    init(text: String, optionA: Option? = nil, optionB: Option? = nil) {
         self.text = text
-        self.optionA = optionA!
-        self.optionB = optionB!
+        self.optionA = optionA
+        self.optionB = optionB
 
     }
 }

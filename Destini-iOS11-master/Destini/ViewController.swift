@@ -20,17 +20,33 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(storyBank)
         
         currentStory = storyBank.story1
         
         updateStory()
     }
+    
+    func showButtons() {
+        topButton.isHidden = false
+        bottomButton.isHidden = false
+    }
+    
 
     func updateStory() {
         storyTextView.text = currentStory?.text
-        topButton.setTitle(currentStory?.optionA!.text, for: .normal)
-        bottomButton.setTitle(currentStory?.optionB.text, for: .normal)
+        showButtons()
+        
+        if let buttonTxt = currentStory?.optionA?.text {
+            topButton.setTitle(buttonTxt, for: .normal)
+        } else {
+            topButton.isHidden = true
+        }
+        
+        if let buttonTxt = currentStory?.optionB?.text {
+            bottomButton.setTitle(buttonTxt, for: .normal)
+        } else {
+            bottomButton.isHidden = true
+        }
     }
     
     // User presses one of the buttons
@@ -39,7 +55,7 @@ class ViewController: UIViewController {
         if(sender.tag == 1) {
             currentStory = currentStory?.optionA!.nextStory
         } else if (sender.tag == 2) {
-            currentStory = currentStory?.optionB.nextStory
+            currentStory = currentStory?.optionB!.nextStory
         }
         
         updateStory()
