@@ -14,16 +14,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var topButton: UIButton!         // Has TAG = 1
     @IBOutlet weak var bottomButton: UIButton!      // Has TAG = 2
     @IBOutlet weak var storyTextView: UILabel!
+    @IBOutlet weak var restartButton: UIButton!
     
     let storyBank: StoryBank = StoryBank()
     var currentStory: Story?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        currentStory = storyBank.story1
-        
-        updateStory()
+        startGame()
     }
     
     func showButtons() {
@@ -31,6 +29,18 @@ class ViewController: UIViewController {
         bottomButton.isHidden = false
     }
     
+    func startGame() {
+        currentStory = storyBank.story1
+        restartButton.isHidden = true
+        showButtons()
+        updateStory()
+    }
+    
+    func finishGame() {
+        topButton.isHidden = true
+        bottomButton.isHidden = true
+        restartButton.isHidden = false
+    }
 
     func updateStory() {
         storyTextView.text = currentStory?.text
@@ -39,13 +49,11 @@ class ViewController: UIViewController {
         if let buttonTxt = currentStory?.optionA?.text {
             topButton.setTitle(buttonTxt, for: .normal)
         } else {
-            topButton.isHidden = true
+            finishGame()
         }
         
         if let buttonTxt = currentStory?.optionB?.text {
             bottomButton.setTitle(buttonTxt, for: .normal)
-        } else {
-            bottomButton.isHidden = true
         }
     }
     
@@ -56,12 +64,11 @@ class ViewController: UIViewController {
             currentStory = currentStory?.optionA!.nextStory
         } else if (sender.tag == 2) {
             currentStory = currentStory?.optionB!.nextStory
+        } else if (sender.tag == 3) {
+            startGame()
         }
         
         updateStory()
-        
-        
-    
     }
     
 
