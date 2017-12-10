@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Auto_Layout_Practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="swk-ls-Cek" userLabel="TopView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artBoard" translatesAutoresizingMaskIntoConstraints="NO" id="VYV-e9-DDO">
+                                        <rect key="frame" x="87" y="120" width="240" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="5bJ-5y-sba"/>
+                                            <constraint firstAttribute="width" constant="240" id="v6R-P5-Pir"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.092690218490000004" green="0.6339806295" blue="0.66082415800000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="VYV-e9-DDO" firstAttribute="centerX" secondItem="swk-ls-Cek" secondAttribute="centerX" id="ooM-in-GBI"/>
+                                    <constraint firstItem="VYV-e9-DDO" firstAttribute="centerY" secondItem="swk-ls-Cek" secondAttribute="centerY" id="xaf-nW-zEK"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hno-nv-jmV" userLabel="BottomView">
+                                <rect key="frame" x="0.0" y="368" width="414" height="368"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notebook" translatesAutoresizingMaskIntoConstraints="NO" id="90j-e1-HR6">
+                                        <rect key="frame" x="87" y="120" width="240" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="Lhs-2r-7lr"/>
+                                            <constraint firstAttribute="width" constant="240" id="pzI-kc-IW2"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.33685302490000002" green="0.51823106779999994" blue="0.88633419690000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="90j-e1-HR6" firstAttribute="centerX" secondItem="Hno-nv-jmV" secondAttribute="centerX" id="86t-AD-Bu6"/>
+                                    <constraint firstItem="90j-e1-HR6" firstAttribute="centerY" secondItem="Hno-nv-jmV" secondAttribute="centerY" id="QNc-Ze-quL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Hno-nv-jmV" firstAttribute="top" secondItem="swk-ls-Cek" secondAttribute="bottom" id="7nY-gJ-ZnW"/>
+                            <constraint firstAttribute="trailing" secondItem="Hno-nv-jmV" secondAttribute="trailing" id="EJe-GW-1Ec"/>
+                            <constraint firstAttribute="bottom" secondItem="Hno-nv-jmV" secondAttribute="bottom" id="FkA-Lt-b3f"/>
+                            <constraint firstItem="Hno-nv-jmV" firstAttribute="top" secondItem="swk-ls-Cek" secondAttribute="bottom" id="Mpb-fK-uQ2"/>
+                            <constraint firstItem="Hno-nv-jmV" firstAttribute="height" secondItem="swk-ls-Cek" secondAttribute="height" id="bWa-ww-Yf9"/>
+                            <constraint firstAttribute="trailing" secondItem="swk-ls-Cek" secondAttribute="trailing" id="dCo-ky-7JN"/>
+                            <constraint firstItem="swk-ls-Cek" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hc7-je-c2b"/>
+                            <constraint firstItem="swk-ls-Cek" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mVf-qL-caG"/>
+                            <constraint firstItem="Hno-nv-jmV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mb0-iW-nqF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.23188405797103" y="132.88043478260872"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="artBoard" width="433" height="533"/>
+        <image name="notebook" width="373" height="527"/>
+    </resources>
+</document>
